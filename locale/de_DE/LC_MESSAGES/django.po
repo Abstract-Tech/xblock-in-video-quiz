@@ -19,25 +19,27 @@ msgstr ""
 
 #: invideoquiz/invideoquiz.py:36
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #: invideoquiz/invideoquiz.py:37
 msgid "In-Video Quiz XBlock"
-msgstr ""
+msgstr "In-Video Quiz XBlock"
 
 #: invideoquiz/invideoquiz.py:42
 msgid "Video ID"
-msgstr ""
+msgstr "Video ID"
 
 #: invideoquiz/invideoquiz.py:46
 msgid ""
 "This is the component ID for the video in which you want to insert your quiz "
 "question."
-msgstr ""
+msgstr "Dies ist die Komponenten-ID für das Video, in das Sie Ihre Quizkomponente"
+"einfügen möchten."
+
 
 #: invideoquiz/invideoquiz.py:52
 msgid "Problem Timemap"
-msgstr ""
+msgstr "Zeitstempel der Quizkomponente"
 
 #: invideoquiz/invideoquiz.py:56
 msgid ""
