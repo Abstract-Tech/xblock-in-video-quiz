@@ -7,7 +7,9 @@ function InVideoQuizXBlock(runtime, element) {
     }
     var problemTimesMap = InVideoQuizXBlock.config[videoId];
     var studentMode = $('.in-video-quiz-block').data('mode') !== 'staff';
-    var extraVideoButton = '<button class="in-video-continue"> Fortfahren</button>';
+
+    // We get the translted text from invideoquiz.html because gettext('Continue') didn't work
+    var extraVideoButton = '<button class="in-video-continue">' + document.getElementById("continue-i18n").innerText +'</button>';
     var video;
     var videoState;
 
