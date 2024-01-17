@@ -7,7 +7,7 @@ function InVideoQuizXBlock(runtime, element) {
     }
     var problemTimesMap = InVideoQuizXBlock.config[videoId];
     var studentMode = $('.in-video-quiz-block').data('mode') !== 'staff';
-    var extraVideoButton = '<button class="in-video-continue">Continue</button>';
+    var extraVideoButton = '<button class="in-video-continue"> Fortfahren</button>';
     var video;
     var videoState;
 
