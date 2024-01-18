@@ -23,7 +23,7 @@ def get_resource_string(path):
     resource_string = pkg_resources.resource_string(__name__, path)
     return resource_string.decode('utf8')
 
-
+@XBlock.needs("i18n")
 class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock):
     # pylint: disable=too-many-ancestors
     """
