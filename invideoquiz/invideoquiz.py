@@ -73,6 +73,7 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock):
         """
         Show to students when viewing courses
         """
+        continue_text = _('Continue')
         fragment = self.build_fragment(
             path_html='html/invideoquiz.html',
             paths_css=[
@@ -85,7 +86,7 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock):
             context={
                 'video_id': self.video_id,
                 'user_mode': self.user_mode,
-                'continue': _('Continue')
+                'continue': continue_text
 
             },
         )
