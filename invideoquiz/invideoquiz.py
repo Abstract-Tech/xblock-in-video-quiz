@@ -6,6 +6,7 @@ videos at specific time points.
 import os
 import pkg_resources
 
+from django.template import Context, Template
 from xblock.core import XBlock
 from xblock.fields import Scope
 from xblock.fields import String
@@ -65,6 +66,12 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock, CompletableXBlockMixi
         'video_id',
         'timemap',
     ]
+
+    def render_template(self, template_path, context):
+        template_str = self.resource_string(template_path)
+        template = Template(template_str)
+        return template.render(Context(context))
+
 
     # Decorate the view in order to support multiple devices e.g. mobile
     # See: https://openedx.atlassian.net/wiki/display/MA/Course+Blocks+API
