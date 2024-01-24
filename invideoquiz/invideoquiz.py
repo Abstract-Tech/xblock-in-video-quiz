@@ -75,8 +75,8 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock):
         """
         continue_text = _('Continue')
         student_context = {
-            video_id: self.video_id,
-            timemap: self.timemap,
+            'video_id': self.video_id,
+            'timemap': self.timemap,
             'continue': continue_text
         }
         student_context.update(context or {})
