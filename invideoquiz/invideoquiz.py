@@ -74,29 +74,19 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock):
         Show to students when viewing courses
         """
         continue_text = _('Continue')
-        fragment = self.build_fragment(
-            path_html='html/invideoquiz.html',
-            paths_css=[
-                'css/invideoquiz.css',
-            ],
-            paths_js=[
-                'js/src/invideoquiz.js',
-            ],
-            fragment_js='InVideoQuizXBlock',
-            context={
-                'video_id': self.video_id,
-                'user_mode': self.user_mode,
-                'continue': continue_text
+        student_context = {
+            video_id: self.video_id,
+            timemap: self.timemap,
+            'continue': continue_text
+        }
+        student_context.update(context or {})
+        template = self.render_template("html/invideoquiz.html", student_context)
+        frag = Fragment(template)
+        frag.add_css(self.resource_string("css/invideoquiz.css.css"))
+        frag.add_javascript(self.resource_string("js/src/invideoquiz.js"))
+        config = add_javascript('js/src/config.js')
 
-            },
-        )
-        config = get_resource_string('js/src/config.js')
-        config = config.format(
-            video_id=self.video_id,
-            timemap=self.timemap,
-        )
-        fragment.add_javascript(config)
-        return fragment
+        return frag
 
     @property
     def user_mode(self):
