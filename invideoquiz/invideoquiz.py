@@ -10,6 +10,7 @@ from xblock.core import XBlock
 from xblock.fields import Scope
 from xblock.fields import String
 from xblock.fragment import Fragment
+from xblock.completable import CompletableXBlockMixin
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 from .utils import _
@@ -24,7 +25,7 @@ def get_resource_string(path):
     return resource_string.decode('utf8')
 
 @XBlock.needs("i18n")
-class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock):
+class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock, CompletableXBlockMixin):
     # pylint: disable=too-many-ancestors
     """
     Display CAPA problems within a video component at a specified time.
