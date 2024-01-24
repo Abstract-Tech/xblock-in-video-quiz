@@ -67,6 +67,12 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock, CompletableXBlockMixi
         'timemap',
     ]
 
+    @staticmethod
+    def resource_string(path):
+        """Handy helper for getting static resources from our kit."""
+        data = pkg_resources.resource_string(__name__, path)
+        return data.decode("utf8")
+
     def render_template(self, template_path, context):
         template_str = self.resource_string(template_path)
         template = Template(template_str)
