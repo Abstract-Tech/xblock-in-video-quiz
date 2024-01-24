@@ -94,11 +94,11 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock, CompletableXBlockMixi
             'continue': continue_text
         }
         student_context.update(context or {})
-        template = self.render_template("html/invideoquiz.html", student_context)
+        template = self.render_template("public/html/invideoquiz.html", student_context)
         frag = Fragment(template)
-        frag.add_css(self.resource_string("css/invideoquiz.css.css"))
-        frag.add_javascript(self.resource_string("js/src/invideoquiz.js"))
-        config = add_javascript('js/src/config.js')
+        frag.add_css(self.resource_string("public/css/invideoquiz.css.css"))
+        frag.add_javascript(self.resource_string("public/js/src/invideoquiz.js"))
+        config = add_javascript('public/js/src/config.js')
 
         return frag
 
