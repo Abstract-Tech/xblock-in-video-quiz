@@ -96,7 +96,7 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock, CompletableXBlockMixi
         student_context.update(context or {})
         template = self.render_template("public/html/invideoquiz.html", student_context)
         frag = Fragment(template)
-        frag.add_css(self.resource_string("public/css/invideoquiz.css.css"))
+        frag.add_css(self.resource_string("public/css/invideoquiz.css"))
         frag.add_javascript(self.resource_string("public/js/src/invideoquiz.js"))
         config = add_javascript('public/js/src/config.js')
 
