@@ -91,6 +91,7 @@ class InVideoQuizXBlock(StudioEditableXBlockMixin, XBlock, CompletableXBlockMixi
         student_context = {
             'video_id': self.video_id,
             'timemap': self.timemap,
+            'user_mode': self.user_mode,
             'continue': continue_text
         }
         student_context.update(context or {})
